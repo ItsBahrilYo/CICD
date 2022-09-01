@@ -78,3 +78,12 @@ menjalankan, menginstall, menguninstall, memberhentkan cukup di terminal </p>
 
 ## 3. Membuat file sederhana untuk update & upgrade sistem
 
+* Buka terminal lalu buat file menggunakan perintah di bawah
+<!-- Code Blocks -->
+```bash
+nano update_upgrade.sh 
+
+```
+![Markdown Logo](https://github.com/ItsBahrilYo/Minggu-Kedua/blob/master/tugas-selasa/uu1.png?raw=true)
+![Markdown Logo](https://github.com/ItsBahrilYo/Minggu-Kedua/blob/master/tugas-selasa/uu2.png?raw=true)
+
