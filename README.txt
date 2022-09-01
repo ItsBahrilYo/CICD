@@ -49,6 +49,32 @@ Merupakan tempat untuk frontend developer mendeploy sebuah aplikasi frontend.
 ![Markdown Logo](https://github.com/ItsBahrilYo/Minggu-Kedua/blob/master/tugas-senin/8.png?raw=true)
 ![Markdown Logo](https://github.com/ItsBahrilYo/Minggu-Kedua/blob/master/tugas-senin/9.png?raw=true)
 
+* Ini merupakan website yang telah berhasil dijalankan ke server Cloudflare Pages
+![Markdown Logo](https://github.com/ItsBahrilYo/Minggu-Kedua/blob/master/tugas-senin/11.png?raw=true)
+* Sekarang kita akan melakukan percobaan untuk proses CICD dengan mengubah nama title page. Buka terminal dan pergi ke /wayshub-frontend/public lalu buka file dengan nama index.html denga text editor nano
+![Markdown Logo](https://github.com/ItsBahrilYo/Minggu-Kedua/blob/master/tugas-senin/13.png?raw=true)
+
+* Pada kolom title, rubah title sesuai dengan keinginan anda
+![Markdown Logo](https://github.com/ItsBahrilYo/Minggu-Kedua/blob/master/tugas-senin/Screenshot%20from%202022-08-31%2023-39-47.png?raw=true)
+
+* Lalu add, commit dan push perubahan ke github anda 
+![Markdown Logo](https://github.com/ItsBahrilYo/Minggu-Kedua/blob/master/tugas-senin/15.png?raw=true)
+
+* Cek pada akun cloudflare anda apakah pages project anda berproses terhadap perubahan yang anda lakukan. Seperti yang anda lihat pada pojok kanan bawah pages production anda terlihat 'in progress' ini menandakan bahwa proses CICD telah tercapai.
+![Markdown Logo](https://github.com/ItsBahrilYo/Minggu-Kedua/blob/master/tugas-senin/17.png?raw=true)
 
 
+## Manage Server with Terminal
+
+## 1. Terminal
+<p> 
+Sebuah command prompt dimana kita bisa mengatur bagaimana suatu sistem komputer berjalan mulai dari management folder, menjalankan dan memberhentikan program serta memonitoring bagaimana sistem komputer berjalan.
+</p>
+
+## 2. Keuntungan menguasai terminal
+
+<p> Dengan menguasai bahasa terminal kita bisa mengoperasikan suatu sistem operasi dengan efektif dan effisien
+menjalankan, menginstall, menguninstall, memberhentkan cukup di terminal </p>
+
+## 3. Membuat file sederhana untuk update & upgrade sistem
 
