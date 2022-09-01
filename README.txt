@@ -87,3 +87,40 @@ nano update_upgrade.sh
 ![Markdown Logo](https://github.com/ItsBahrilYo/Minggu-Kedua/blob/master/tugas-selasa/uu1.png?raw=true)
 ![Markdown Logo](https://github.com/ItsBahrilYo/Minggu-Kedua/blob/master/tugas-selasa/uu2.png?raw=true)
 
+* Simpan lalu keluar dan eksekusi filenya dengan perintah
+<!-- Code Blocks -->
+```bash
+sh update_upgrade.sh 
+
+```
+![Markdown Logo](https://github.com/ItsBahrilYo/Minggu-Kedua/blob/master/tugas-selasa/uu4.png?raw=true)
+
+* File yang sudah dibuat telah tereksekusi dengan baik
+![Markdown Logo](https://github.com/ItsBahrilYo/Minggu-Kedua/blob/master/tugas-selasa/uu5.png?raw=true)
+
+## 4. Membuat file sederhana untuk membuat firewall port 22, port 80 dan port 443
+
+* Sama seperti cara sebelumnya yaitu buat filenya terlebih dahulu dengan perintah
+<!-- Code Blocks -->
+```bash
+nano update_upgrade.sh 
+
+```
+![Markdown Logo](https://github.com/ItsBahrilYo/Minggu-Kedua/blob/master/tugas-selasa/Screenshot%20from%202022-08-30%2015-22-09.png?raw=true)
+
+* Setelah menyimpan dan keluar dari text editoor nano lalu enable firewall dengan perintah
+<!-- Code Blocks -->
+```bash
+sudo ufw enable 
+
+```
+![Markdown Logo](https://github.com/ItsBahrilYo/Minggu-Kedua/blob/master/tugas-selasa/Screenshot%20from%202022-08-30%2015-26-35.png?raw=true)
+
+* Lalu eksekusi file yang telah dibuat dengan perintah
+
+<!-- Code Blocks -->
+```bash
+sh allow_ufw.sh
+
+```
+![Markdown Logo](https://github.com/ItsBahrilYo/Minggu-Kedua/blob/master/tugas-selasa/Screenshot%20from%202022-08-30%2015-27-28.png?raw=true)
