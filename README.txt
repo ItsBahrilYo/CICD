@@ -124,3 +124,189 @@ sh allow_ufw.sh
 
 ```
 ![Markdown Logo](https://github.com/ItsBahrilYo/Minggu-Kedua/blob/master/tugas-selasa/Screenshot%20from%202022-08-30%2015-27-28.png?raw=true)
+
+
+## Web Server and Load Balancing
+
+## 1. Web Server
+
+<p>
+Merupakan server yang menerima request dari user lalu meneruskannya ke database lalu meneruskan hasil request kembali kepada user
+</p>
+
+## 2. Membuat 3 buah server (Web server, server aplikasi 1 , server aplikasi 2)
+
+* Pertama-tama buat 2 server dulu untuk mempraktekkan konsep reverse proxy
+menggunakan multipass
+
+![Markdown Logo](https://github.com/ItsBahrilYo/Minggu-Kedua/blob/master/tugas-rabu/reverseproxy/1.png?raw=true)
+
+![Markdown Logo](https://github.com/ItsBahrilYo/Minggu-Kedua/blob/master/tugas-rabu/reverseproxy/2.png?raw=true)
+
+* Install web server nginx dengan perintah
+<!-- Code Blocks -->
+```bash
+sudo apt install nginx
+
+```
+* Lalu cek web servernya dengan perintah
+<!-- Code Blocks -->
+```bash
+systemctl status nginx
+
+```
+![Markdown Logo](https://github.com/ItsBahrilYo/Minggu-Kedua/blob/master/tugas-rabu/reverseproxy/3.png?raw=true)
+
+* Buat directory di /etc/nginx untuk file konfigurasi reverse proxy
+![Markdown Logo](https://github.com/ItsBahrilYo/Minggu-Kedua/blob/master/tugas-rabu/reverseproxy/4.png?raw=true)
+
+* Ubah ownership folder tersebut agar kita bisa edit file di dalam folder tersebut dengan perintah
+<!-- Code Blocks -->
+```bash
+sudo chown ubuntu:ubuntu <nama folder>
+
+```
+![Markdown Logo](https://github.com/ItsBahrilYo/Minggu-Kedua/blob/master/tugas-rabu/reverseproxy/5.png?raw=true)
+![Markdown Logo](https://github.com/ItsBahrilYo/Minggu-Kedua/blob/master/tugas-rabu/reverseproxy/6.png?raw=true)
+
+* Buat file di dalam folder tersebut lalu buka dengan text editor nano
+
+<!-- Code Blocks -->
+```bash
+touch <nama file>.conf
+nano <nama file>
+
+```
+![Markdown Logo](https://github.com/ItsBahrilYo/Minggu-Kedua/blob/master/tugas-rabu/reverseproxy/7.png?raw=true)
+ 
+ * Ubah server name dengan domain sesuai selera anda, dan masukkan ip dari server aplikasi anda diikuti dengan port aplikasinya
+ ![Markdown Logo](https://github.com/ItsBahrilYo/Minggu-Kedua/blob/master/tugas-rabu/reverseproxy/8.png?raw=true)
+ * Exit lalu masuk kedalam directory /etc/nginx lalu buka file nginx.conf dengan nano
+ <!-- Code Blocks -->
+```bash
+nano nginx.conf
+
+```
+![Markdown Logo](https://github.com/ItsBahrilYo/Minggu-Kedua/blob/master/tugas-rabu/reverseproxy/9.png?raw=true)
+
+* Scroll ke bawah sampain menemukan tulisan include, lalu masukkan directory file dari reverse proxy yang anda buat
+![Markdown Logo](https://github.com/ItsBahrilYo/Minggu-Kedua/blob/master/tugas-rabu/reverseproxy/10.png?raw=true)
+* Lalu cek apakah perubahan yang dilakukan berhasil tereksekusi dengan command
+<!-- Code Blocks -->
+```bash
+sudo nginx -t
+
+```
+* Restart nginx
+<!-- Code Blocks -->
+```bash
+sudo systemctl restart nginx
+
+```
+* Langkah selanjutnya pergi ke lokal komputer anda lalu masuk pada directory /etc/hosts dan buka dengan text editor nano
+<!-- Code Blocks -->
+```bash
+sudo nano /etc/hosts
+```
+![Markdown Logo](https://github.com/ItsBahrilYo/Minggu-Kedua/blob/master/tugas-rabu/reverseproxy/12.png?raw=true)
+* Masukkan ip dari server aplikasi dan nama domain yang telah di setting tadi
+![Markdown Logo](https://github.com/ItsBahrilYo/Minggu-Kedua/blob/master/tugas-rabu/reverseproxy/13.png?raw=true)
+
+* Pergi ke server aplikasi dan clone project yang ingin di deploy
+dengan perintah
+
+<!-- Code Blocks -->
+```bash
+git clone <url project>
+```
+
+![Markdown Logo](https://github.com/ItsBahrilYo/Minggu-Kedua/blob/master/tugas-rabu/reverseproxy/14.png?raw=true)
+
+* Pergi ke web browser lalu masukkan domain kalian tadi
+![Markdown Logo](https://github.com/ItsBahrilYo/Minggu-Kedua/blob/master/tugas-rabu/reverseproxy/15.png?raw=true)
+
+* Sebenarnya semua konfigurasi sudah benar, kenapa muncul bad gateway? ya karena kita belum start aplikasinya di server aplikasi
+* Sekarang pergi ke server aplikasi lalu install nvm dan npm di directory aplikasinya
+<!-- Code Blocks -->
+```bash
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
+exec bash
+nvm install 16
+npm install
+```
+
+
+![Markdown Logo](https://github.com/ItsBahrilYo/Minggu-Kedua/blob/master/tugas-rabu/reverseproxy/16.png?raw=true)
+![Markdown Logo](https://github.com/ItsBahrilYo/Minggu-Kedua/blob/master/tugas-rabu/reverseproxy/17.png?raw=true)
+![Markdown Logo](https://github.com/ItsBahrilYo/Minggu-Kedua/blob/master/tugas-rabu/reverseproxy/18.png?raw=true)
+
+* Proses install npm selesai
+![Markdown Logo](https://github.com/ItsBahrilYo/Minggu-Kedua/blob/master/tugas-rabu/reverseproxy/19.png?raw=true)
+
+* Lalu jalankan aplikasi dengan perintah
+<!-- Code Blocks -->
+```bash
+npm start
+```
+![Markdown Logo](https://github.com/ItsBahrilYo/Minggu-Kedua/blob/master/tugas-rabu/reverseproxy/20.png?raw=true)
+![Markdown Logo](https://github.com/ItsBahrilYo/Minggu-Kedua/blob/master/tugas-rabu/reverseproxy/21.png?raw=true)
+
+* Lalu pergi ke browser dan masukkan domain anda
+![Markdown Logo](https://github.com/ItsBahrilYo/Minggu-Kedua/blob/master/tugas-rabu/reverseproxy/22.png?raw=true)
+
+
+## 4.Load Balancing
+
+* Buat server untuk aplikasi dan masuk ke shell
+![Markdown Logo](https://github.com/ItsBahrilYo/Minggu-Kedua/blob/master/tugas-rabu/loadbalancing/1.png?raw=true)
+* Install nvm dan npm nya
+<!-- Code Blocks -->
+```bash
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
+exec bash
+nvm install 16
+npm install
+```
+![Markdown Logo](https://github.com/ItsBahrilYo/Minggu-Kedua/blob/master/tugas-rabu/loadbalancing/2.png?raw=true)
+![Markdown Logo](https://github.com/ItsBahrilYo/Minggu-Kedua/blob/master/tugas-rabu/loadbalancing/3.png?raw=true)
+![Markdown Logo](https://github.com/ItsBahrilYo/Minggu-Kedua/blob/master/tugas-rabu/loadbalancing/4.png?raw=true)
+
+* Lalu pergi /etc/nginx/dumbflix di web server untuk meng-konfigurasi file reverse_proxy.conf nya dan buka dengan nano
+<!-- Code Blocks -->
+```bash
+nano reverse_proxy.conf
+```
+![Markdown Logo](https://github.com/ItsBahrilYo/Minggu-Kedua/blob/master/tugas-rabu/loadbalancing/5.png?raw=true)
+
+* ubah script di dalam menjadi seperti di gambar
+
+![Markdown Logo](https://github.com/ItsBahrilYo/Minggu-Kedua/blob/master/tugas-rabu/loadbalancing/6.png?raw=true)
+
+* Keluar dari tex editor nano lalu cek apakah perubahan berhasil dan restart nginx
+<!-- Code Blocks -->
+```bash
+sudo nginx -
+sudo systemctl restart nginx
+```
+![Markdown Logo](https://github.com/ItsBahrilYo/Minggu-Kedua/blob/master/tugas-rabu/loadbalancing/7.png?raw=true)
+* Pergi ke server aplikasi , masuk ke directory aplikasi lalu jalankan aplikasi dengan perintah
+<!-- Code Blocks -->
+```bash
+npm start
+```
+![Markdown Logo](https://github.com/ItsBahrilYo/Minggu-Kedua/blob/master/tugas-rabu/loadbalancing/8.png?raw=true)
+![Markdown Logo](https://github.com/ItsBahrilYo/Minggu-Kedua/blob/master/tugas-rabu/loadbalancing/9.png?raw=true)
+
+* Kedua server aplikasi berhasil dijalankan
+![Markdown Logo](https://github.com/ItsBahrilYo/Minggu-Kedua/blob/master/tugas-rabu/loadbalancing/10.png?raw=true)
+
+* Sekarang kita akan cek apakah load balancing bekerja dengan cara mematikan salah satu server aplikasi
+dengan ctrl+c
+
+![Markdown Logo](https://github.com/ItsBahrilYo/Minggu-Kedua/blob/master/tugas-rabu/loadbalancing/11.png?raw=true)
+
+* Buka browser dan masukkan domain
+![Markdown Logo](https://github.com/ItsBahrilYo/Minggu-Kedua/blob/master/tugas-rabu/loadbalancing/12.png?raw=true)
+
+* Ternyata masih bisa di buka, load balancing berhasil
+
