@@ -126,6 +126,45 @@ sh allow_ufw.sh
 ![Markdown Logo](https://github.com/ItsBahrilYo/Minggu-Kedua/blob/master/tugas-selasa/Screenshot%20from%202022-08-30%2015-27-28.png?raw=true)
 
 
+## Monitoring
+
+merupakan aktivitas untuk melihit kinerja suatu sistem
+
+* Ada beberapa perintah yang bisa digunakan untuk memonitoring sistem
+
+htop : menampilkan hasil keseluruhan kinerja sistem
+
+![Markdown Logo](https://github.com/ItsBahrilYo/Minggu-Kedua/blob/master/tugas-rabu/monitoring/Screenshot%20from%202022-09-02%2006-39-16.png?raw=true)
+
+![Markdown Logo](https://github.com/ItsBahrilYo/Minggu-Kedua/blob/master/tugas-rabu/monitoring/Screenshot%20from%202022-09-02%2006-40-35.png?raw=true)
+
+
+
+
+
+nmon : menampilkan hasil kinerja sistem secara spesifik
+![Markdown Logo](https://github.com/ItsBahrilYo/Minggu-Kedua/blob/master/tugas-rabu/monitoring/Screenshot%20from%202022-09-02%2006-41-13.png?raw=true)
+
+![Markdown Logo](https://github.com/ItsBahrilYo/Minggu-Kedua/blob/master/tugas-rabu/monitoring/Screenshot%20from%202022-09-02%2006-41-27.png?raw=true)
+
+![Markdown Logo](https://github.com/ItsBahrilYo/Minggu-Kedua/blob/master/tugas-rabu/monitoring/Screenshot%20from%202022-09-02%2006-41-44.png?raw=true)
+
+
+
+![Markdown Logo](https://github.com/ItsBahrilYo/Minggu-Kedua/blob/master/tugas-rabu/monitoring/Screenshot%20from%202022-09-02%2006-41-58.png?raw=true)
+
+
+
+
+
+lsof : melihat seluruh file yang tebuka berdasarkan proses
+![Markdown Logo](https://github.com/ItsBahrilYo/Minggu-Kedua/blob/master/tugas-rabu/monitoring/Screenshot%20from%202022-09-02%2006-42-28.png?raw=true)
+
+
+
+ps   : melihat suatu proses yang berjalan
+![Markdown Logo](https://github.com/ItsBahrilYo/Minggu-Kedua/blob/master/tugas-rabu/monitoring/Screenshot%20from%202022-09-02%2006-43-40.png?raw=true)
+
 ## Web Server and Load Balancing
 
 ## 1. Web Server
